@@ -46,8 +46,8 @@ list of array references.
 =head1 PERFORMANCE
 
 This distribution contains a benchmarking script which compares several
-compression modules available on CPAN.  These are the results on a MacBook
-2.6GHz Core i5 (64-bit) with Perl 5.22.0:
+modules available on CPAN. These are the results on a MacBook 2.6GHz Core i5
+(64-bit) with Perl 5.22.0:
 
     Set::Crossproduct          45.61+-0.3/s
     List::Gen                 60.75+-0.51/s
