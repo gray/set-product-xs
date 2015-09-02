@@ -42,4 +42,18 @@ ok defined &product, 'product() is exported';
     like $@, qr/^Not an array reference/, 'bad list';
 }
 
+{
+    my @set = ([1,2], [3,4,5]);
+    my @out; eval { product { push @out, "@_"; $#_ = 0; } @set };
+    is_deeply \@out, ['1 3', '1 4', '1 5', '2 3', '2 4', '2 5'],
+        'modify size of @_ inside block';
+}
+
+{
+    my @set = ([1,2], [3,4,5]);
+    my @out; eval { product { push @out, "@_"; @_ = (1..3); } @set };
+    is_deeply \@out, ['1 3', '1 4', '1 5', '2 3', '2 4', '2 5'],
+        'recreate @_ inside block';
+}
+
 done_testing;
