@@ -4,11 +4,16 @@
 #include "perl.h"
 #include "XSUB.h"
 #include "ppport.h"
-#include "multicall.h"
 
 #ifndef CvISXSUB
 #  define CvISXSUB(cv) CvXSUB(cv)
 #endif
+#if PERL_VERSION < 12
+#  define cxinc() Perl_cxinc(aTHX)
+#endif
+
+#include "multicall.h"
+
 
 MODULE = Set::Product::XS     PACKAGE = Set::Product::XS
 
