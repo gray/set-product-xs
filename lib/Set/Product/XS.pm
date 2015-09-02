@@ -49,13 +49,13 @@ This distribution contains a benchmarking script which compares several
 modules available on CPAN. These are the results on a MacBook 2.6GHz Core i5
 (64-bit) with Perl 5.22.0:
 
-    Set::Crossproduct          45.61+-0.3/s
-    List::Gen                 60.75+-0.51/s
-    Algorithm::Loops          68.32+-0.56/s
-    Set::Scalar                100.8+-1.4/s
-    Math::Cartesian::Product   203.2+-3.4/s
-    Set::Product::PP           275.4+-1.3/s
-    Set::Product::XS         724.96+-0.43/s
+    Set::Crossproduct           45.1+-0.62/s
+    List::Gen                  63.21+-0.42/s
+    Algorithm::Loops           72.87+-0.34/s
+    Set::Scalar               111.75+-0.18/s
+    Math::Cartesian::Product    201.7+-2.8/s
+    Set::Product::PP          285.25+-0.12/s
+    Set::Product::XS         1106.72+-0.52/s
 
 =head1 SEE ALSO
 

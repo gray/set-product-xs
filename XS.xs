@@ -4,6 +4,11 @@
 #include "perl.h"
 #include "XSUB.h"
 #include "ppport.h"
+#include "multicall.h"
+
+#ifndef CvISXSUB
+#  define CvISXSUB(cv) CvXSUB(cv)
+#endif
 
 MODULE = Set::Product::XS     PACKAGE = Set::Product::XS
 
@@ -44,28 +49,61 @@ PPCODE:
         out[i] = AvARRAY(in[i])[0];
     Newxz(idx, items, int);
 
-    for (i = 0; i >= 0; ) {
-        int j;
+    if (! CvISXSUB(cv)) {
+        I32 gimme = G_VOID;
+        dMULTICALL;
+        PUSH_MULTICALL(cv);
 
-        PUSHMARK(SP);
-        EXTEND(SP, items);
-        for (j = 0; j < items; j++)
-            PUSHs(out[j]);
-        PUTBACK;
+        for (i = 0; i >= 0; ) {
+            int j;
+            AV * const av = GvAV(PL_defgv);
 
-        call_sv((SV *)cv, G_VOID | G_DISCARD);
+            av_extend(av, items - 1);
+            AvFILLp(av) = items - 1;
+            for (j = 0; j < items; j++)
+                AvARRAY(av)[j] = SvREFCNT_inc(out[j]);
 
-        SPAGAIN;
+            MULTICALL;
 
-        for (i = items - 1; i >= 0; i--) {
-            idx[i]++;
-            if (idx[i] > av_len(in[i])) {
-                idx[i] = 0;
-                out[i] = AvARRAY(in[i])[0];
+            for (i = items - 1; i >= 0; i--) {
+                idx[i]++;
+                if (idx[i] > av_len(in[i])) {
+                    idx[i] = 0;
+                    out[i] = AvARRAY(in[i])[0];
+                }
+                else {
+                    out[i] = AvARRAY(in[i])[idx[i]];
+                    break;
+                }
             }
-            else {
-                out[i] = AvARRAY(in[i])[idx[i]];
-                break;
+        }
+
+        POP_MULTICALL;
+    }
+    else {
+        for (i = 0; i >= 0; ) {
+            int j;
+
+            PUSHMARK(SP);
+            EXTEND(SP, items);
+            for (j = 0; j < items; j++)
+                PUSHs(out[j]);
+            PUTBACK;
+
+            call_sv((SV *)cv, G_VOID | G_DISCARD);
+
+            SPAGAIN;
+
+            for (i = items - 1; i >= 0; i--) {
+                idx[i]++;
+                if (idx[i] > av_len(in[i])) {
+                    idx[i] = 0;
+                    out[i] = AvARRAY(in[i])[0];
+                }
+                else {
+                    out[i] = AvARRAY(in[i])[idx[i]];
+                    break;
+                }
             }
         }
     }
