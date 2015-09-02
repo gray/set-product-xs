@@ -1,4 +1,7 @@
 Revision history for Set-Product-XS
 
+0.01_01  Wed Sep  2 03:51:00 UTC 2015
+    - Switched to the multicall API for improved performance.
+
 0.01  Sat Aug 22 16:53:50 UTC 2015
     - Initial distribution.
