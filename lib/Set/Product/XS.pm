@@ -32,7 +32,7 @@ Set::Product::XS - speed up Set::Product
 =head1 DESCRIPTION
 
 The C<Set::Product::XS> module provides a faster XS implementation for
-C<Set::Scalar>. It will automatically be used, if available.
+C<Set::Product>. It will automatically be used, if available.
 
 =head1 FUNCTIONS
 
