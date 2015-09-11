@@ -1,5 +1,5 @@
 Set-Product-XS
-==========---=
+==============
 
 This module generates the cartesian product of a set of lists.
 
