@@ -1,5 +1,8 @@
 Revision history for Set-Product-XS
 
+0.02  Fri Sep 18 06:52:02 UTC 2015
+    - No changes; promoted developer version to stable.
+
 0.01_02  Wed Sep  2 18:58:21 UTC 2015
     - Defined cvinc for compatibility with Perl < 5.12.
 
