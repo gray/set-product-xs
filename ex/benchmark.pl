@@ -19,7 +19,7 @@ my @set = (
 );
 
 cmpthese 0, {
-    'Set::Crossproduct' => sub {
+    'Set::CrossProduct' => sub {
         my $it = Set::CrossProduct->new(\@set);
         while (my @s = $it->get) {
             my $str = "@s";
@@ -65,8 +65,8 @@ __END__
 
 =head1 BENCHMARKS
 
-                                        Rate Set::Crossproduct    List::Gen Algorithm::Loops   Set::Scalar Math::Cartesian::Product Set::Product::PP Set::Product::XS
-    Set::Crossproduct           45.1+-0.62/s                --       -28.7%           -38.1%        -59.6%                   -77.6%           -84.2%           -95.9%
+                                        Rate Set::CrossProduct    List::Gen Algorithm::Loops   Set::Scalar Math::Cartesian::Product Set::Product::PP Set::Product::XS
+    Set::CrossProduct           45.1+-0.62/s                --       -28.7%           -38.1%        -59.6%                   -77.6%           -84.2%           -95.9%
     List::Gen                  63.21+-0.42/s        40.2+-2.2%           --           -13.3%        -43.4%                   -68.7%           -77.8%           -94.3%
     Algorithm::Loops           72.87+-0.34/s        61.6+-2.4% 15.29+-0.94%               --        -34.8%                   -63.9%           -74.5%           -93.4%
     Set::Scalar               111.75+-0.18/s       147.8+-3.5%   76.8+-1.2%     53.35+-0.77%            --                   -44.6%           -60.8%           -89.9%

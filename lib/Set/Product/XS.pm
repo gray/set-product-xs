@@ -49,7 +49,7 @@ This distribution contains a benchmarking script which compares several
 modules available on CPAN. These are the results on a MacBook 2.6GHz Core i5
 (64-bit) with Perl 5.22.0:
 
-    Set::Crossproduct           45.1+-0.62/s
+    Set::CrossProduct           45.1+-0.62/s
     List::Gen                  63.21+-0.42/s
     Algorithm::Loops           72.87+-0.34/s
     Set::Scalar               111.75+-0.18/s
