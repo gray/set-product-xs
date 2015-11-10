@@ -68,7 +68,13 @@ PPCODE:
             for (j = 0; j < items; j++)
                 AvARRAY(av)[j] = SvREFCNT_inc(out[j]);
 
+            ENTER;
+            SAVETMPS;
+
             MULTICALL;
+
+            FREETMPS;
+            LEAVE;
 
             for (i = items - 1; i >= 0; i--) {
                 idx[i]++;
