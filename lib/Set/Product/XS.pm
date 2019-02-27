@@ -47,15 +47,16 @@ list of array references.
 
 This distribution contains a benchmarking script which compares several
 modules available on CPAN. These are the results on a MacBook 2.6GHz Core i5
-(64-bit) with Perl 5.26.1:
+(64-bit) with Perl 5.28:
 
-    Set::CrossProduct           31.17+-0.2/s
-    List::MapMulti             34.16+-0.21/s
-    Algorithm::Loops             86.3+-1.5/s
-    Set::Scalar               138.15+-0.56/s
-    Math::Cartesian::Product      244+-1.8/s
-    Set::Product::PP              306+-3.6/s
-    Set::Product::XS         1066.58+-0.24/s
+    Set::CrossProduct        29.7/s
+    List::MapMulti           34.5/s
+    Algorithm::Loops         92.5/s
+    Set::Scalar               126/s
+    Math::Cartesian::Product  237/s
+    Set::Product::PP          301/s
+    Math::Prime::Util         914/s
+    Set::Product::XS          932/s
 
 =head1 SEE ALSO
 
