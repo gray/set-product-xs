@@ -103,7 +103,7 @@ L<http://search.cpan.org/dist/Set-Product-XS/>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2017 gray <gray at cpan.org>, all rights reserved.
+Copyright (C) 2015-2019 gray <gray at cpan.org>, all rights reserved.
 
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
