@@ -83,21 +83,13 @@ You can also look for information at:
 
 L<https://github.com/gray/set-product-xs>
 
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Set-Product-XS>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Set-Product-XS>
-
 =item * RT: CPAN's request tracker
 
 L<http://rt.cpan.org/Public/Dist/Display.html?Name=Set-Product-XS>
 
-=item * Search CPAN
+=item * MetaCPAN
 
-L<http://search.cpan.org/dist/Set-Product-XS/>
+L<https://metacpan.org/release/Set-Product-XS>
 
 =back
 
