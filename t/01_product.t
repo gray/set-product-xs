@@ -69,5 +69,4 @@ ok defined &product, 'product() is exported';
     is_deeply \@_, [1..3], 'restored @_'
 }
 
-
 done_testing;
