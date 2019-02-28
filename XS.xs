@@ -56,7 +56,7 @@ PPCODE:
     SAVEFREEPV(idx);
 
     if (! CvISXSUB(cv)) {
-        I32 gimme = G_VOID | G_NOARGS;
+        I32 gimme = G_VOID;
         /* localize @_ */
         AV *av = save_ary(PL_defgv);
         /* @_ doesn't refcount it's contents. */
@@ -102,7 +102,7 @@ PPCODE:
                 PUSHs(out[j]);
             PUTBACK;
 
-            call_sv((SV *)cv, G_DISCARD | G_VOID | G_NOARGS);
+            call_sv((SV *)cv, G_DISCARD | G_VOID);
 
             SPAGAIN;
 
