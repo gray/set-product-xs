@@ -65,7 +65,7 @@ L<Set::Product>
 =head1 REQUESTS AND BUGS
 
 Please report any bugs or feature requests to
-L<http://rt.cpan.org/Public/Bug/Report.html?Queue=Set-Product-XS>. I will be
+L<https://rt.cpan.org/Public/Bug/Report.html?Queue=Set-Product-XS>. I will be
 notified, and then you'll automatically be notified of progress on your bug as
 I make changes.
 
@@ -85,7 +85,7 @@ L<https://github.com/gray/set-product-xs>
 
 =item * RT: CPAN's request tracker
 
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=Set-Product-XS>
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Set-Product-XS>
 
 =item * MetaCPAN
 
